@@ -1,0 +1,27 @@
+FloatLayout:
+
+    MDLabel:
+        id: label
+        text: "Hello World"
+        halign: "center"
+        size_hint: 1, 1
+        pos_hint: {"center_x": .25, "center_y": .75}
+
+    MDRaisedButton:
+        id: button
+        text: "Press Me"
+        size_hint: 0.4, 0.4
+        pos_hint: {"center_x": .5, "center_y": .5}
+        on_press: app.button_pressed(*args)
+
+
+    MDSlider:
+        id: slider
+        min: 0
+        max: 100
+        value: 50
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x": .5, "center_y": .8}
+        hint: True
+        on_touch_move: app.slider_touch_move(self.value)
+

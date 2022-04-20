@@ -1,0 +1,94 @@
+FloatLayout:
+
+    MDLabel:
+        id: labelDelivery
+        text: "Delivery"
+        halign: "center"
+        font_style: "H3"
+        size_hint: 1, 1
+        pos_hint: {"center_x": .15, "center_y": .9}
+
+    MDLabel:
+        id: labelDestination
+        text: "Destination : "
+        halign: "center"
+        font_style: "H4"
+        size_hint: 0.25, 0.1
+        pos_hint: {"center_x": .20, "center_y": .75}
+
+    MDTextField:
+        id: textDestination
+        hint_text: "Destination"
+        pos_hint: {"center_x": .44, "center_y": .75}
+        size_hint: 0.20, 0.1
+        password: False
+        icon_left: "key-variant"
+
+    MDLabel:
+        id: labelPassword
+        text: "Password   : "
+        halign: "center"
+        font_style: "H4"
+        size_hint: 0.25, 0.1
+        pos_hint: {"center_x": .20, "center_y": .65}
+
+    MDTextField:
+        id: textPassword
+        hint_text: "Password"
+        pos_hint: {"center_x": .44, "center_y": .65}
+        size_hint: 0.20, 0.1
+        password: True
+        icon_left: "key-variant"
+
+    MDIconButton:
+        icon: "eye-off"
+        pos_hint: {"center_x": .525, "center_y": .65}
+        theme_text_color: "Hint"
+        on_release:
+            self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+            textPassword.password = False if textPassword.password is True else True
+
+
+    MDRaisedButton:
+        id: buttonExplore
+        text: "Explore"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x": .85, "center_y": .80}
+        on_press: app.buttonExplore_pressed(*args)
+
+
+    MDRaisedButton:
+        id: buttonDisinfection
+        text: "Disinfection"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x": .85, "center_y": .60}
+        on_press: app.buttonDisinfection_pressed(*args)
+
+    MDRaisedButton:
+        id: buttonCleaning
+        text: "Cleaning"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x": .85, "center_y": .40}
+        on_press: app.buttonCleaning_pressed(*args)
+
+    MDRaisedButton:
+        id: buttonOpen
+        text: "Open"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x": .15, "center_y": .20}
+        on_press: app.buttonOpen_pressed(*args)
+
+    MDRaisedButton:
+        id: buttonClose
+        text: "Close"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x": .35, "center_y": .20}
+        on_press: app.buttonClose_pressed(*args)
+
+    MDRaisedButton:
+        id: buttonDelivery
+        text: "Delivery"
+        size_hint: 0.60, 0.20
+        pos_hint: {"center_x": .37, "center_y": .425}
+        on_press: app.buttonDelivery_pressed(*args)
+
