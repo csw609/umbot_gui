@@ -86,6 +86,13 @@ FloatLayout:
         on_press: app.buttonClose_pressed(*args)
 
     MDRaisedButton:
+        id: buttonStop
+        text: "Stop"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x": .85, "center_y": .20}
+        on_press: app.buttonStop_pressed(*args)
+
+    MDRaisedButton:
         id: buttonDelivery
         text: "Delivery"
         size_hint: 0.60, 0.20

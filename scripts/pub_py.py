@@ -25,23 +25,20 @@ class TutorialApp(MDApp):
 
     def buttonExplore_pressed(self, *args):
         print("button pressed")
-        # msg = "Hello GUI"
-        # self.screen.ids.labelDestination.text = "button pressed"
-        # pub.publish(msg)
+        msg = "explore"
+        mode_pub.publish(msg)
         print("Explore")
 
     def buttonDisinfection_pressed(self, *args):
         print("button pressed")
-        # msg = "Hello GUI"
-        # self.screen.ids.labelDestination.text = "button pressed"
-        # pub.publish(msg)
+        msg = "disinfection"
+        mode_pub.publish(msg)
         print("Disinfection")
 
     def buttonCleaning_pressed(self, *args):
         print("button pressed")
-        # msg = "Hello GUI"
-        # self.screen.ids.labelDestination.text = "button pressed"
-        # pub.publish(msg)
+        msg = "cleaning"
+        mode_pub.publish(msg)
         print("Cleaning")
 
     def buttonOpen_pressed(self, *args):
@@ -61,6 +58,12 @@ class TutorialApp(MDApp):
         # pub.publish(msg)
         print("Close")
 
+    def buttonStop_pressed(self, *args):
+        print("button pressed")
+        msg = "stop"
+        mode_pub.publish(msg)
+        print("Stop")
+
     def buttonDelivery_pressed(self, *args):
         self.password = self.screen.ids.textPassword.text
         print("button pressed")
@@ -79,5 +82,5 @@ if __name__ == '__main__':
     rospy.init_node('simple_gui',anonymous=True)
 
     pub = rospy.Publisher('/button', String, queue_size=10)
-
+    mode_pub = rospy.Publisher('/umbot_mode', String, queue_size=10)
     TutorialApp().run()
