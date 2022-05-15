@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="kivy"    default="umbot.kv" />
+
+    <!-- Kivy config arguments -->
+    <arg name="kivy_file"         default="$(find umbot_gui)/kivy/$(arg kivy)" />
+
+    <!-- Node -->
+    <node name="pub_py" pkg="umbot_gui" type="pub_py.py" output="screen" respawn="true">
+        <param name="kivy_file"   value="$(arg kivy_file)" />
+    </node>
+</launch>

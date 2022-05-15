@@ -12,10 +12,13 @@ from std_msgs.msg import String
 
 class TutorialApp(MDApp):
     def __init__(self, **kwargs):
+        kivy_file = rospy.get_param('~kivy_file')      # Get kivy file
+        print(kivy_file)
+        
         super().__init__(**kwargs)
         print("debug")
         self.password = "0"
-        self.screen = Builder.load_file('/home/csw/catkin_ws/src/umbot_gui/umbot.kv')
+        self.screen = Builder.load_file(kivy_file)
         #self.screen = Builder.load_file('/home/csw/rosgui.kv')
         #print("debug22222222222222")
 
